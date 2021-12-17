@@ -1,0 +1,55 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type AuthType {
+  access_token: String!
+}
+
+type UserType {
+  _id: ID!
+  email: String!
+  username: String!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type ArticleType {
+  _id: ID!
+  story_title: String
+  title: String
+  story_url: String
+  author: String
+  created_at: DateTime!
+}
+
+type Query {
+  getUsers: [UserType!]!
+  getArticle: [ArticleType!]!
+}
+
+type Mutation {
+  authenticateUser(input: AuthInput!): AuthType!
+  createUser(input: UserInput!): UserType!
+  removeArticle(input: RemoveInput!): [ArticleType!]!
+}
+
+input AuthInput {
+  username: String!
+  password: String!
+}
+
+input UserInput {
+  email: String!
+  password: String!
+  username: String!
+}
+
+input RemoveInput {
+  _id: String!
+}

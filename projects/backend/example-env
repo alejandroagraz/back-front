@@ -1,0 +1,4 @@
+MONO_DB_CONNECTION_STRING=mongodb://root:1234@database:27017/test?authSource=admin
+SECRET_JWT=test.test
+API_EXT=https://hn.algolia.com/api/v1/search_by_date?query=nodejs
+TIME_TOKEN=7200s
